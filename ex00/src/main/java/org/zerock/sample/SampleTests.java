@@ -5,8 +5,9 @@ import org.springframework.test.context.ContextConfiguration;
 
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
-
+/*
 @ContextConfiguration
+
 @Log4j
 public class SampleTests {
 
@@ -14,4 +15,4 @@ public class SampleTests {
 	private Restaurant restaurant;
 	
 	@
-}
+}*/
