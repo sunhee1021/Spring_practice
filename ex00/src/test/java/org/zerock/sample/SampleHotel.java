@@ -8,8 +8,8 @@ import lombok.ToString;
 @Component
 @ToString
 @Getter
-
 public class SampleHotel {
+
 	private Chef chef;
 	
 	public SampleHotel(Chef chef) {
