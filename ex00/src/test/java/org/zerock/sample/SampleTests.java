@@ -27,5 +27,6 @@ public class SampleTests {
 		log.info(restaurant);
 		log.info("-------------------------");
 		log.info(restaurant.getChef());
+		log.info("-------------------------");
 	}
 }
