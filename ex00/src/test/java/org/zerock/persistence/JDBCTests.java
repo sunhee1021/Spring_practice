@@ -19,7 +19,7 @@ public class JDBCTests {
 	}
 	
 	public void testConnection() {
-		
+		//jdbc test 코드
 		try(Connection con = DriverManager.getConnection(
 				"jdbc:oracle:thin:@localhost:1521:XE",
 				"book_ex",
