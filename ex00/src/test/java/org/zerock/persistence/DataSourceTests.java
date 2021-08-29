@@ -25,6 +25,7 @@ public class DataSourceTests {
 	@Setter(onMethod_ = { @Autowired })
 	private DataSource dataSource;
 	
+	//테스트코드
 	@Test
 	public void testConnection() {
 		
