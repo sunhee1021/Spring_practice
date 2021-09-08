@@ -22,7 +22,10 @@
 	</beans:bean>
 	
 	<context:component-scan base-package="org.zerock.controller" />
-	
+	<!-- 지정된 패키지를 쭉 스캔해서
+		 해당 패키지에 선언된 클래스들을 조사하면서 
+		 객체(bean) 설정에 사용되는 어노테이션들을 가진 클래스들을
+		 파악하고 , 필요하다면 객체로 생성해서 관리 -->
 	
 	
 </beans:beans>
