@@ -32,6 +32,7 @@ public class DataSourceTests {
 	
 	
 	/*테스트코드
+	 * 오늘은 휴일
 	@Test
 	public void testConnection() {
 		
