@@ -8,6 +8,8 @@ import org.zerock.domain.BoardVO;
 
 public interface BoardMapper {
 	@Select("select * from tbl_board where bno > 0")
-	public List<BoardVO> getList();
+	public List<BoardVO> getList(); 
+	
+	public void insert(BoardVO board);
+	public void insertSelectKey(BoardVO board);
 }
-//183페이지, 컨디션 난조
