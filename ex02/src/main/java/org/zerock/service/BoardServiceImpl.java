@@ -17,8 +17,11 @@ public class BoardServiceImpl implements BoardService {
 	//spring 4.3 이상에서 자동처리
 	private BoardMapper mapper;
 	
+	@Override
 	public void register(BoardVO board) {
 		
+		log.info("register.........." + board);
+		mapper.insertSelectKey(board);
 	}
 
 	@Override
