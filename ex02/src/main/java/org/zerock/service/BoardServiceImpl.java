@@ -36,6 +36,8 @@ public class BoardServiceImpl implements BoardService {
 		
 		log.info("modify......." + board);
 		return mapper.update(board) == 1;
+		//정상적으로 수정과 삭제가 이루어지면 1이라는 값이 반환되기때문에
+		// == 연산자를 이용해서 true/false 를 처리할수 있음
 	}
 
 	@Override
