@@ -47,4 +47,9 @@ public class BoardServiceTests {
 	
 	}
 	
+	@Test
+	public void testGet() {
+		
+		log.info(service.get(1L));
+	}
 }
