@@ -78,6 +78,4 @@ public class BoardMapperTests {
 		int count = mapper.update(board);
 		log.info("UPDATE COUNT : " + count);
 	}
-	//197페이지부터 다시
-	//15일은 휴가
 }
