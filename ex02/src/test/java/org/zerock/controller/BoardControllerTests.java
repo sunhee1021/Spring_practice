@@ -31,7 +31,7 @@ public class BoardControllerTests {
 	@Setter(onMethod_ = {@Autowired})
 	private WebApplicationContext ctx;
 	
-	private MockMvc mocMvc;
+	private MockMvc mockMvc;
 	//가짜 mvc라고 생각하면 됨
 	//가짜로 url과 파라미터등을 브라우저에서 사용하는것처럼 만들어서
 	//controller를 실행해 볼수 있음
@@ -39,16 +39,28 @@ public class BoardControllerTests {
 	
 	@Before
 	public void setup() {
-		this.mocMvc = MockMvcBuilders.webAppContextSetup(ctx).build();
+		this.mockMvc = MockMvcBuilders.webAppContextSetup(ctx).build();
 	}
 	
 	@Test
 	public void testList() throws Exception{
 		
 		log.info(
-				mocMvc.perform(MockMvcRequestBuilders.get("/board/list"))
+				mockMvc.perform(MockMvcRequestBuilders.get("/board/list"))
 				.andReturn()
 				.getModelAndView()
 				.getModelMap());
+	}
+	
+	@Test
+	public void testRegister() throws Exception{
+		String resultPage = mockMvc.perform(MockMvcRequestBuilders.post(
+				"/board/register")
+				.param("title", "체스트 새글 제목")
+				.param("content", "체스트 새글 내용")
+				.param("writer", "user00")
+				).andReturn().getModelAndView().getViewName();
+		
+		log.info(resultPage);
 	}
 }
