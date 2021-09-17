@@ -38,5 +38,8 @@ public class BoardController {
 		rttr.addFlashAttribute("result", board.getBno());
 		
 		return "redirect:/board/list";
+		//등록작업이 끝난후 다시 목록화면으로 이동하기 위함
+		//추가적으로 새롭게 등록된 게시물의 번호를 같이 전달하기 위해
+		//redirectAttributes를 이용
 	}
 }

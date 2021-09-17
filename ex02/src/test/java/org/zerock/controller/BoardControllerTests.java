@@ -63,4 +63,6 @@ public class BoardControllerTests {
 		
 		log.info(resultPage);
 	}
+	//MockMvcRequestBuilders의 post()를 이용하면 post방식으로 데이터전달 가능
+	//param()을 이용해서 전달해야 하는 파라미터들을 지정할 수 있음
 }
