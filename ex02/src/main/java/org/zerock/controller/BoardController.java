@@ -46,9 +46,38 @@ public class BoardController {
 		//redirectAttributes를 이용
 	}
 	
+	@RequestMapping(value="/get", method=RequestMethod.GET)
 	public void get(@RequestParam("bno") Long bno, Model model) {
 		
 		log.info("/get");
 		model.addAttribute("board", service.get(bno));
+	}
+
+	@RequestMapping(value="/modify", method=RequestMethod.GET)
+	public String modify(BoardVO board, RedirectAttributes rttr) {
+		
+		log.info("modify : " + board);
+		
+		if(service.modify(board)) {
+		rttr.addFlashAttribute("result", "success");
+	}
+	return "redirect:/board/list";
+	}
+	
+	@RequestMapping(value="/remove", method=RequestMethod.POST)
+	public String remove(@RequestParam("bno") Long bno, RedirectAttributes rttr) {
+		
+		log.info("remove : "  + bno);
+		
+		if(service.remove(bno)) {
+		
+		rttr.addFlashAttribute("result", "success");
+		
+		}
+		
+		return "redirect:/board/list";
+		//삭제작업이 끝난후 다시 목록화면으로 이동하기 위함
+		//추가적으로 새롭게 등록된 게시물의 번호를 같이 전달하기 위해
+		//redirectAttributes를 이용
 	}
 }
