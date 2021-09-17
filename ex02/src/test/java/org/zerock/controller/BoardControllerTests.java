@@ -90,4 +90,16 @@ public class BoardControllerTests {
 		log.info(resultPage);
 	}
 	
+	@Test
+	public void testRemove() throws Exception{
+	
+		//삭제 전 db에서 게시물 번호 확인할 것
+		String resultPage = mockMvc.perform(MockMvcRequestBuilders.post("/board/remove")
+				.param("bno", "25"))
+				.andReturn().getModelAndView().getViewName();
+		
+		log.info(resultPage);
+	}
+	
+	//221페이지부터
 }
