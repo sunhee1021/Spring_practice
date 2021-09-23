@@ -104,5 +104,6 @@
     	   });
        });
        //266페이지부터
+       //오늘은 휴가
        </script>
        <%@include file="../includes/footer.jsp" %>
