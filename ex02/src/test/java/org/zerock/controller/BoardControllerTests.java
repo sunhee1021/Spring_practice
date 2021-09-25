@@ -63,8 +63,8 @@ public class BoardControllerTests {
 				.getModelAndView()
 				.getModelMap());
 	}
-	//302페이지부터
-	
+
+	//300페이지
 	@Test
 	public void testRegister() throws Exception{
 		String resultPage = mockMvc.perform(MockMvcRequestBuilders.post(
