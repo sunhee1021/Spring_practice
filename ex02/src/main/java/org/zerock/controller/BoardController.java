@@ -68,18 +68,26 @@ public class BoardController {
 	}
 
 	@RequestMapping(value="/modify", method=RequestMethod.GET)
-	public String modify(BoardVO board, RedirectAttributes rttr) {
+	public String modify(BoardVO board, 
+			@ModelAttribute("cri") Criteria cri
+			,RedirectAttributes rttr) {
 		
 		log.info("modify : " + board);
 		
 		if(service.modify(board)) {
 		rttr.addFlashAttribute("result", "success");
 	}
+		
+	rttr.addAttribute("pageNum", cri.getPageNum());
+	rttr.addAttribute("amount", cri.getAmount());
+	
 	return "redirect:/board/list";
 	}
 	
 	@RequestMapping(value="/remove", method=RequestMethod.POST)
-	public String remove(@RequestParam("bno") Long bno, RedirectAttributes rttr) {
+	public String remove(@RequestParam("bno") Long bno, 
+			@ModelAttribute("cri") Criteria cri 
+			,RedirectAttributes rttr) {
 		
 		log.info("remove : "  + bno);
 		
@@ -88,6 +96,9 @@ public class BoardController {
 		rttr.addFlashAttribute("result", "success");
 		
 		}
+		
+		rttr.addAttribute("pageNum", cri.getPageNum());
+		rttr.addAttribute("amount", cri.getAmount());
 		
 		return "redirect:/board/list";
 		//삭제작업이 끝난후 다시 목록화면으로 이동하기 위함
