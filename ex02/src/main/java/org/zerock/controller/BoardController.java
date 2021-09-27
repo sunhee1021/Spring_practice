@@ -5,6 +5,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -59,7 +60,8 @@ public class BoardController {
 	}
 	
 	@RequestMapping(value="/get", method=RequestMethod.GET)
-	public void get(@RequestParam("bno") Long bno, Model model) {
+	public void get(@RequestParam("bno") Long bno,
+			@ModelAttribute("cri") Criteria cri, Model model) {
 		
 		log.info("/get");
 		model.addAttribute("board", service.get(bno));
