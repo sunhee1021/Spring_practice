@@ -25,7 +25,7 @@ public class Criteria {
 	}
 	
 	public String[] getTypeArr() {
-		
+		//오늘휴식
 		return type == null? new String[] {} : type.split("");
 	}
 }
