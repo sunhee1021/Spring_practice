@@ -74,7 +74,7 @@ public class BoardController {
 		model.addAttribute("board", service.get(bno));
 	}
 
-	@RequestMapping(value="/modify", method=RequestMethod.GET)
+	@RequestMapping(value="/modify", method=RequestMethod.POST)
 	public String modify(BoardVO board, 
 			@ModelAttribute("cri") Criteria cri
 			,RedirectAttributes rttr) {
@@ -87,6 +87,8 @@ public class BoardController {
 		
 	rttr.addAttribute("pageNum", cri.getPageNum());
 	rttr.addAttribute("amount", cri.getAmount());
+	rttr.addAttribute("type", cri.getType());
+	rttr.addAttribute("keyword", cri.getKeyword());
 	
 	return "redirect:/board/list";
 	}
@@ -106,6 +108,8 @@ public class BoardController {
 		
 		rttr.addAttribute("pageNum", cri.getPageNum());
 		rttr.addAttribute("amount", cri.getAmount());
+		rttr.addAttribute("type", cri.getType());
+		rttr.addAttribute("keyword", cri.getKeyword());
 		
 		return "redirect:/board/list";
 		//삭제작업이 끝난후 다시 목록화면으로 이동하기 위함
