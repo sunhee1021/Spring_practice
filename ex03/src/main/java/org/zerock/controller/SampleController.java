@@ -60,5 +60,4 @@ public class SampleController {
 		
 		return map;
 	}
-	//373페이지부터
 }
